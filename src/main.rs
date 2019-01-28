@@ -69,7 +69,7 @@ fn guess_amino_acids(acids: &mut Vec<&str>, amino_type: String) {
 
 #[allow(dead_code)]
 fn print_vector(vec: &[&str]) {
-    for x in vec {
-        println!("    -{}", x);
+    for (x, item) in vec.iter().enumerate() {
+        println!("{}) {}", x + 1, item);
     }
 }

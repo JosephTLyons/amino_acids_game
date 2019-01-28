@@ -60,8 +60,8 @@ fn guess_amino_acids(acids: &mut Vec<&str>) {
 }
 
 #[allow(dead_code)]
-fn print_array(array: &[&str]) {
-    for x in array {
+fn print_vector(vec: &[&str]) {
+    for x in vec {
         println!("    -{}", x);
     }
 }

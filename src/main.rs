@@ -6,6 +6,8 @@ fn main() {
 }
 
 fn play_game() {
+    print_rules();
+
     let mut non_polar: Vec<&str> = vec![
         "glycine",
         "alanine",
@@ -38,14 +40,20 @@ fn play_game() {
         "histidine"
     ];
 
-    println! ("Type name of amino acid, \"hint\", or \"skip\"");
-
     guess_amino_acids (&mut non_polar, "non-polar");
     guess_amino_acids (&mut polar, "polar");
     guess_amino_acids (&mut acidic, "acidid");
     guess_amino_acids (&mut basic, "basic");
 
     println! ("The game is over!");
+}
+
+fn print_rules() {
+    println! ("What can be typed:");
+    println! ("-The name of an amino acid");
+    println! ("-\"hint\"");
+    println! ("-\"skip\"");
+    println!();
 }
 
 fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {

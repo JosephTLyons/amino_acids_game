@@ -1,0 +1,8 @@
+[package]
+name = "amino_acids_game"
+version = "0.1.0"
+authors = ["Joseph Lyons <josephtlyons@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+text_io = "0.1.7"

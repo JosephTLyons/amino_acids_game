@@ -40,15 +40,15 @@ fn play_game() {
 
     println!("Type name of amino acid, \"hint\", or \"skip\"");
 
-    guess_amino_acids(&mut non_polar, String::from("non-polar"));
-    guess_amino_acids(&mut polar, String::from("polar"));
-    guess_amino_acids(&mut acidic, String::from("acidid"));
-    guess_amino_acids(&mut basic, String::from("basic"));
+    guess_amino_acids(&mut non_polar, "non-polar");
+    guess_amino_acids(&mut polar, "polar");
+    guess_amino_acids(&mut acidic, "acidid");
+    guess_amino_acids(&mut basic, "basic");
 
     println!("The game is over!");
 }
 
-fn guess_amino_acids(amino_acids: &mut Vec<&str>, amino_type: String) {
+fn guess_amino_acids(amino_acids: &mut Vec<&str>, amino_type: &str) {
     let original_amount = amino_acids.len();
     println!("Guess the {} {} amino acids:", original_amount, amino_type);
 

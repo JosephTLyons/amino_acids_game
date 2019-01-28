@@ -29,22 +29,18 @@ fn play_game() {
                                     "arginine",
                                     "histidine"];
 
-    println!("Guess the non-polar amino acids:");
-    guess_amino_acids(&mut non_polar);
+    guess_amino_acids(&mut non_polar, String::from("non-polar"));
+    guess_amino_acids(&mut polar, String::from("polar"));
+    guess_amino_acids(&mut acidic, String::from("acidid"));
+    guess_amino_acids(&mut basic, String::from("basic"));
 
-    println!("Guess the polar amino acids:");
-    guess_amino_acids(&mut polar);
-
-    println!("Guess the acidic amino acids:");
-    guess_amino_acids(&mut acidic);
-
-    println!("Guess the basic amino acids:");
-    guess_amino_acids(&mut basic);
 }
 
-fn guess_amino_acids(acids: &mut Vec<&str>) {
+fn guess_amino_acids(acids: &mut Vec<&str>, amino_type: String) {
     let mut input: String;
     let original_amount = acids.len();
+
+    println!("Guess the {} {} amino acids:", original_amount, amino_type);
 
     while ! acids.is_empty() {
         println!("{}/{}", original_amount - acids.len(), original_amount);

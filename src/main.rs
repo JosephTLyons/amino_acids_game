@@ -1,33 +1,42 @@
-#[macro_use] extern crate text_io;
+#[macro_use]
+extern crate text_io;
 
 fn main() {
     play_game();
 }
 
 fn play_game() {
-    let mut non_polar: Vec<&str> = vec!["glycine",
-                                        "alanine",
-                                        "valine",
-                                        "leucine",
-                                        "isoleucine",
-                                        "methionine",
-                                        "tryptophan",
-                                        "phenylalanine",
-                                        "proline"];
+    let mut non_polar: Vec<&str> = vec![
+        "glycine",
+        "alanine",
+        "valine",
+        "leucine",
+        "isoleucine",
+        "methionine",
+        "tryptophan",
+        "phenylalanine",
+        "proline",
+    ];
 
-    let mut polar: Vec<&str> = vec!["serine",
-                                    "threonine",
-                                    "cysteine",
-                                    "tyrosine",
-                                    "asparagine",
-                                    "glutamine"];
+    let mut polar: Vec<&str> = vec![
+        "serine",
+        "threonine",
+        "cysteine",
+        "tyrosine",
+        "asparagine",
+        "glutamine",
+    ];
 
-    let mut acidic: Vec<&str> = vec!["aspartic",
-                                     "glutamic"];
+    let mut acidic: Vec<&str> = vec![
+        "aspartic",
+        "glutamic"
+    ];
 
-    let mut basic: Vec<&str> = vec!["lysine",
-                                    "arginine",
-                                    "histidine"];
+    let mut basic: Vec<&str> = vec![
+        "lysine",
+        "arginine",
+        "histidine"
+    ];
 
     guess_amino_acids(&mut non_polar, String::from("non-polar"));
     guess_amino_acids(&mut polar, String::from("polar"));

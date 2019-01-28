@@ -1,5 +1,5 @@
 [[package]]
-name = "amino_acids"
+name = "amino_acids_game"
 version = "0.1.0"
 dependencies = [
  "text_io 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",

@@ -48,26 +48,38 @@ fn play_game() {
     println!("The game is over!");
 }
 
-fn guess_amino_acids(acids: &mut Vec<&str>, amino_type: String) {
-    let original_amount = acids.len();
+fn guess_amino_acids(amino_acids: &mut Vec<&str>, amino_type: String) {
+    let original_amount = amino_acids.len();
     println!("Guess the {} {} amino acids:", original_amount, amino_type);
 
     let mut input: String;
 
-    while ! acids.is_empty() {
-        println!("{}/{}", original_amount - acids.len(), original_amount);
+    while ! amino_acids.is_empty() {
+        println!("{}/{}", original_amount - amino_acids.len(), original_amount);
+
         input = read!();
 
-        for x in 0..acids.len() {
-            if acids[x] == input.to_lowercase() {
-                acids.remove(x);
+        // Skip this group of amino acids
+        if input == "skip" {
+            println!("The remaining {} amino acids are:", amino_type);
+            print_vector(&amino_acids);
+            return;
+        }
+        // Print first first letter of first element as a hint
+        else if input == "hint" {
+            println!("{}", amino_acids[0].as_bytes()[0] as char);
+        }
+
+        // Check if guess is correct
+        for x in 0..amino_acids.len() {
+            if amino_acids[x] == input.to_lowercase() {
+                amino_acids.remove(x);
                 break;
             }
         }
     }
 }
 
-#[allow(dead_code)]
 fn print_vector(vec: &[&str]) {
     for (x, item) in vec.iter().enumerate() {
         println!("{}) {}", x + 1, item);

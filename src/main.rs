@@ -45,7 +45,7 @@ fn play_game() {
     guess_amino_acids(&mut acidic, String::from("acidid"));
     guess_amino_acids(&mut basic, String::from("basic"));
 
-    println!("You've guessed all 20 amino acids!  Congratulations!");
+    println!("The game is over!");
 }
 
 fn guess_amino_acids(acids: &mut Vec<&str>, amino_type: String) {

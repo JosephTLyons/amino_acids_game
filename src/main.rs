@@ -38,10 +38,10 @@ fn play_game() {
 }
 
 fn guess_amino_acids(acids: &mut Vec<&str>, amino_type: String) {
-    let mut input: String;
     let original_amount = acids.len();
-
     println!("Guess the {} {} amino acids:", original_amount, amino_type);
+
+    let mut input: String;
 
     while ! acids.is_empty() {
         println!("{}/{}", original_amount - acids.len(), original_amount);

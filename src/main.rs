@@ -62,7 +62,7 @@ fn guess_amino_acids(amino_acids: &mut Vec<&str>, amino_type: &str) {
         // Skip this group of amino acids
         if input == "skip" {
             println!("The remaining {} amino acids are:", amino_type);
-            print_vector(&amino_acids);
+            print_acids(&amino_acids);
             return;
         }
         // Print first first letter of first element as a hint
@@ -80,7 +80,7 @@ fn guess_amino_acids(amino_acids: &mut Vec<&str>, amino_type: &str) {
     }
 }
 
-fn print_vector(vec: &[&str]) {
+fn print_acids(vec: &[&str]) {
     for (x, item) in vec.iter().enumerate() {
         println!("{}) {}", x + 1, item);
     }

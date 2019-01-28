@@ -38,6 +38,8 @@ fn play_game() {
         "histidine"
     ];
 
+    println!("Type name of amino acid, \"hint\", or \"skip\"");
+
     guess_amino_acids(&mut non_polar, String::from("non-polar"));
     guess_amino_acids(&mut polar, String::from("polar"));
     guess_amino_acids(&mut acidic, String::from("acidid"));

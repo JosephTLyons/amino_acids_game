@@ -1,6 +1,10 @@
 #[macro_use] extern crate text_io;
 
 fn main() {
+    play_game();
+}
+
+fn play_game() {
     let mut non_polar: Vec<&str> = vec!["glycine",
                                         "alanine",
                                         "valine",

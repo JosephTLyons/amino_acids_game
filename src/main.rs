@@ -2,10 +2,10 @@
 extern crate text_io;
 
 fn main() {
-    play_game();
+    game();
 }
 
-fn play_game() {
+fn game() {
     print_rules();
 
     let mut non_polar: Vec<&str> = vec![

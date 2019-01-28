@@ -81,7 +81,7 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
 }
 
 fn print_acids (vec: &[&str]) {
-    for (x, item) in vec.iter().enumerate() {
-        println! ("{}) {}", x + 1, item);
+    for (iter_count, vec_item) in vec.iter().enumerate() {
+        println! ("{}) {}", iter_count + 1, vec_item);
     }
 }

@@ -60,7 +60,7 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
     let original_amount = amino_acids.len();
     println! ("Guess the {} {} amino acids:", original_amount, amino_type);
 
-    let mut input: String;
+    let mut input: String = String::new();
 
     while ! amino_acids.is_empty() {
         println! ("{}/{}", original_amount - amino_acids.len(), original_amount);

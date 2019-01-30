@@ -1,5 +1,4 @@
-#[macro_use]
-extern crate text_io;
+use std::io;
 
 fn main() {
     game();
@@ -63,9 +62,15 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
     let mut input: String = String::new();
 
     while ! amino_acids.is_empty() {
-        println! ("{}/{}", original_amount - amino_acids.len(), original_amount);
+        println! (
+            "{}/{} ({}%)",
+            original_amount - amino_acids.len(),
+            original_amount,
+            ((original_amount - amino_acids.len()) as f32 / original_amount as f32) * 100.0
+        );
 
-        input = read!();
+        io::stdin().read_line (&mut input).expect ("Couldn't read input.");
+        input.remove(input.len() - 1);
 
         // Skip this group of amino acids
         if input == "skip" {
@@ -73,6 +78,7 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
             print_acids (&amino_acids);
             return;
         }
+
         // Print first first letter of first element as a hint
         else if input == "hint" {
             println! ("{}", amino_acids[0].as_bytes()[0] as char);
@@ -85,6 +91,8 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
                 break;
             }
         }
+
+        input.clear();
     }
 }
 

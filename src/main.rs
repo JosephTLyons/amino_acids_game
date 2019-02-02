@@ -70,7 +70,9 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
         );
 
         io::stdin().read_line (&mut input).expect ("Couldn't read input.");
-        input.remove(input.len() - 1);
+
+        // Remove newline from stdin and any other whitespace
+        input = input.trim().to_string();
 
         // Skip this group of amino acids
         if input == "skip" {

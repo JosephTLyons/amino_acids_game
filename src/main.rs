@@ -1,4 +1,5 @@
 use std::io;
+use std::time::{SystemTime};
 
 fn main() {
     game();
@@ -39,11 +40,16 @@ fn game() {
         "histidine"
     ];
 
+    let start_time = SystemTime::now();
+
     guess_amino_acids (&mut non_polar, "non-polar");
     guess_amino_acids (&mut polar, "polar");
     guess_amino_acids (&mut acidic, "acidid");
     guess_amino_acids (&mut basic, "basic");
 
+    let end_time = SystemTime::now().duration_since (start_time).expect ("Error timing run.");
+
+    println!("This run took: {:?}", end_time);
     println! ("The game is over!");
 }
 

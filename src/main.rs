@@ -44,7 +44,7 @@ fn game() {
 
     guess_amino_acids (&mut non_polar, "non-polar");
     guess_amino_acids (&mut polar, "polar");
-    guess_amino_acids (&mut acidic, "acidid");
+    guess_amino_acids (&mut acidic, "acidic");
     guess_amino_acids (&mut basic, "basic");
 
     let end_time = SystemTime::now().duration_since (start_time).expect ("Error timing run.");

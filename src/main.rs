@@ -81,14 +81,14 @@ fn guess_amino_acids (amino_acids: &mut Vec<&str>, amino_type: &str) {
         input = input.trim().to_string();
 
         // Skip this group of amino acids
-        if input == "skip" {
+        if input.to_lowercase() == "skip" {
             println! ("The remaining {} amino acids are:", amino_type);
             print_acids (&amino_acids);
             return;
         }
 
         // Print first first letter of first element as a hint
-        else if input == "hint" {
+        else if input.to_lowercase() == "hint" {
             println! ("{}", amino_acids[0].as_bytes()[0] as char);
         }
 

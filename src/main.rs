@@ -31,13 +31,13 @@ fn game() {
 
     let mut acidic: Vec<&str> = vec![
         "aspartic",
-        "glutamic"
+        "glutamic",
     ];
 
     let mut basic: Vec<&str> = vec![
         "lysine",
         "arginine",
-        "histidine"
+        "histidine",
     ];
 
     let start_time = SystemTime::now();

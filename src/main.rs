@@ -1,5 +1,5 @@
 use std::io;
-use std::time::{SystemTime};
+use std::time::SystemTime;
 
 fn main() {
     game();

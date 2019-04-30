@@ -47,9 +47,9 @@ fn game() {
     guess_amino_acids (&mut acidic, "acidic");
     guess_amino_acids (&mut basic, "basic");
 
-    let end_time = SystemTime::now().duration_since (start_time).expect ("Error timing run.");
+    let duration = SystemTime::now().duration_since (start_time).expect ("Error timing run.");
 
-    println!("This run took: {:?}", end_time);
+    println!("This run took: {:?}", duration);
     println! ("The game is over!");
 }
 

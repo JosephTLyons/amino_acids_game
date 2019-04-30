@@ -48,8 +48,13 @@ fn game() {
     guess_amino_acids (&mut basic, "basic");
 
     let duration = SystemTime::now().duration_since (start_time).expect ("Error timing run.");
-
     println!("This run took: {:?}", duration);
+
+    let number_guessed: usize = 20 - non_polar.len() - polar.len() - acidic.len() - basic.len();
+    println!("Amino acids guessed correctly: {}", number_guessed);
+
+    println!("Average time of each guess: {:?}", duration / number_guessed as u32);
+
     println! ("The game is over!");
 }
 

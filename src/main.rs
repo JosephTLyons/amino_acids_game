@@ -52,10 +52,9 @@ fn game() {
 
     let start_time = SystemTime::now();
 
-    guess_amino_acids(&mut non_polar);
-    guess_amino_acids(&mut polar);
-    guess_amino_acids(&mut acidic);
-    guess_amino_acids(&mut basic);
+    for amino_group in [&mut non_polar, &mut polar, &mut acidic, &mut basic] {
+        guess_amino_acids(amino_group)
+    }
 
     let duration = SystemTime::now()
         .duration_since(start_time)
